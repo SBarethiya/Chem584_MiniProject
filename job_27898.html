@@ -1,0 +1,579 @@
+<HTML>
+	<HEAD><TITLE>WebMO Job Summary - 27898</TITLE>
+		<LINK REL="stylesheet" TYPE="text/css" HREF="webmo.css" />
+		<LINK REL="stylesheet" TYPE="text/css" HREF="jquery-ui.min.css" />
+		<LINK REL="stylesheet" TYPE="text/css" HREF="jquery-ui.theme.min.css" />
+		<SCRIPT LANGUAGE="JavaScript" SRC="javascript/jquery.js"></SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript" SRC="javascript/jquery-ui.min.js"></SCRIPT>
+		<!-- Apycom DHTML Tabs -->
+		<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2" SRC="javascript/apytabs.js"></SCRIPT>
+		<!-- Apycom DHTML Tabs, dhtml-menu.com -->
+	</HEAD>
+	
+	<SCRIPT LANGUAGE="JavaScript" SRC="javascript/safesubmit.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" SRC="javascript/view_job.js"></SCRIPT>
+	
+	<SCRIPT LANGUAGE="JavaScript" SRC="javascript/moledit_js/moledit_js.nocache.js"></SCRIPT>
+	
+	<SCRIPT LANGUAGE="JavaScript">
+		var format = "XYZFormat";
+		var jobNumber = 27898;
+		var url_htmlBase = "./";
+		
+		function RawOutput(form) {
+			window.open('./27898/output.txt');
+		}
+		
+		function CheckNotesArea() {
+			if (document.form.notes.value != "")
+				ExpandNotes();
+		}
+				
+		$(document).ready(function(){
+			togglePanel = function(event, ui) {
+					//Code to allow multiple open accordion panels
+					// The accordion believes a panel is being opened
+					if (ui.newHeader[0]) {
+						var currHeader  = ui.newHeader;
+						var currContent = currHeader.next('.ui-accordion-content');
+					// The accordion believes a panel is being closed
+					} else {
+						var currHeader  = ui.oldHeader;
+						var currContent = currHeader.next('.ui-accordion-content');
+					}
+					// Since we've changed the default behavior, this detects the actual status
+					var isPanelSelected = currHeader.attr('aria-selected') == 'true';
+
+					// Toggle the panel's header
+					currHeader.toggleClass('ui-corner-all',isPanelSelected).toggleClass('accordion-header-active ui-state-active ui-corner-top',!isPanelSelected).attr('aria-selected',((!isPanelSelected).toString()));
+					
+					// Toggle the panel's icon
+					currHeader.children('.ui-icon').toggleClass('ui-icon-triangle-1-e',isPanelSelected).toggleClass('ui-icon-triangle-1-s',!isPanelSelected);
+
+					// Toggle the panel's content
+					currContent.toggleClass('accordion-content-active',!isPanelSelected)    
+					if (isPanelSelected) { currContent.slideUp(); }  else { currContent.slideDown(); }
+
+					return false; // Cancel the default action
+			};
+				
+			$('#calculated_quantities_accordion').accordion({
+				heightStyle: "content",
+				collapsible:true,
+				beforeActivate: togglePanel
+			});
+						
+			var doExpand = true;
+			$('.accordion-expand-all')
+			.click(function(){
+				if (doExpand) {
+					$('#calculated_quantities h3.ui-accordion-header').not('[aria-selected=true]').trigger("click");
+					$('.accordion-expand-all').html('Collapse all');
+					doExpand = false;
+				} else {
+					$('#calculated_quantities h3.ui-accordion-header').not('[aria-selected=false]').trigger("click");
+					$('.accordion-expand-all').html('Expand all');
+					doExpand = true;
+				}
+			})
+			.hover(
+				function(){
+					$(this).css("text-decoration", "underline");
+				},
+				function(){
+					$(this).css("text-decoration", "none");
+				});
+				
+			//On desktop, expand the accordions to start with
+			$('.accordion-expand-all').click();
+		});
+		
+	</SCRIPT>
+	
+	<BODY ONLOAD="Translate(document.form)">
+		
+		<H1>WebMO Job Summary</H1>
+		<H2>27898: H2S_CCSD_21G, Optimize + Vib Freq - Gaussian</H2>
+		
+		
+		
+		<FORM NAME="form">
+			
+		<FORM NAME="form" ACTION="/~webmo/cgi-bin/webmo/view_job.cgi" METHOD="POST">
+		
+				<DIV CLASS="tframe" STYLE="width: 95%; height: 85%; min-height: 400px; ">
+			
+				<DIV ID="viewer_area" CLASS="content_area">
+					<SPAN TITLE="Show" CLASS="popup"><IMG ID="expand" SRC="./images/expand.gif" STYLE="display: none" ONCLICK="Expand()"></SPAN>
+					
+					<TABLE CLASS="content_area">
+						<TR ONCLICK="setTimeout('SwapApplets()',50)">
+							<TD COLSPAN=3 VALIGN=TOP HEIGHT=16>
+								<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2" SRC="./javascript/webmo_tabs.js"></SCRIPT>
+								<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript1.2" SRC="./javascript/view_tabs.js"></SCRIPT>
+							</TD>
+						</TR>
+						<TR HEIGHT=100%>
+							<TD COLSPAN=3>
+								<!-- Viewer -->
+								<DIV ID="content1" STYLE="height: 100%">
+									<DIV ID="moledit-panel" CLASS="gwt-app" STYLE="height: 100%"
+									viewOnly="true" version="17.0.012p"></DIV>
+								</DIV>
+								
+								<!-- Data grapher -->
+								<DIV ID="content2" STYLE="height: 100%">
+									<DIV ID="datagrapher-panel" CLASS="gwt-app" STYLE="height: 100%" ></DIV>
+								</DIV>
+							</TD>
+						</TR>
+						<TR><TD>
+							<CENTER>
+								<BUTTON TYPE="button" ONCLICK="RawOutput(document.form)">Raw Output</BUTTON>
+							</CENTER>
+						</TD</TR>
+					</TABLE>
+				</DIV>
+			
+			</DIV>
+			
+			<DIV ID="notes_area" STYLE="display: none">
+				<TEXTAREA NAME="notes" ROWS=10 COLS=70></TEXTAREA><BR>
+				<BUTTON TYPE="button" ONCLICK="SaveNotes(document.form)"><FONT SIZE=1>Save Notes</FONT></BUTTON>
+			</DIV>
+			
+			<INPUT TYPE="hidden" NAME="operation">
+			<INPUT TYPE="hidden" NAME="model">
+			<INPUT TYPE="hidden" NAME="jobNumber" VALUE="27898">
+			<INPUT TYPE="hidden" NAME="geometry" VALUE="16%200%2e000000%200%2e000000%200%2e104305%0a1%200%2e000000%201%2e011725%20%2d0%2e834437%0a1%200%2e000000%20%2d1%2e011725%20%2d0%2e834437%0a">
+			<INPUT TYPE="hidden" NAME="connections" VALUE="2%20%20%20%20%201%20%20%20%20%201%20%20%20%20%20%0a3%20%20%20%20%201%20%20%20%20%201%20%20%20%20%20%0a%0a">
+			<INPUT TYPE="hidden" NAME="zmatrix" VALUE="1%20%20%20%20%200%20%20%20%20%200%20%20%20%20%200%20%20%20%20%20%0a2%20%20%20%20%201%20%20%20%20%200%20%20%20%20%200%20%20%20%20%20%0a3%20%20%20%20%201%20%20%20%20%202%20%20%20%20%200%20%20%20%20%20%0a%0a">
+			<INPUT TYPE="hidden" NAME="charges" VALUE="0%20%203%20%20%0a0%20%203%20%20%0a0%20%203%20%20%0a%0a">
+			
+			<H2 ID="h2_calculated_quantities">Calculated Quantities</H2>
+			
+			<SPAN ID="calculated_quantities">			
+			<SPAN CLASS="accordion-expand-all" STYLE="color: #FFFFFF; font-size: 0.8em">Expand all</SPAN>
+			<DIV ID="calculated_quantities_accordion">
+			
+				<H3>Overview</H3>
+				<DIV ID="overview">
+				
+				<TABLE CLASS="calculated_quantity">
+					<TR CLASS="header">
+						<TD><B>Quantity</B></TD>
+						<TD><B>Value</B></TD>
+					</TR>
+					
+					
+					
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Route</TD>
+						<TD VALIGN="TOP"> #N CCSD/3-21G OPT FREQ Geom=Connectivity</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Stoichiometry</TD>
+						<TD VALIGN="TOP">H<sub>2</sub>S</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Symmetry</TD>
+						<TD VALIGN="TOP">C2V</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Basis</TD>
+						<TD VALIGN="TOP">3-21G</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Z Energy</TD>
+						<TD VALIGN="TOP">-396.78141754 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">CCSD Energy</TD>
+						<TD VALIGN="TOP">-396.78262932 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Corr Energy</TD>
+						<TD VALIGN="TOP">-396.77760829 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">RHF Energy</TD>
+						<TD VALIGN="TOP">-396.703850923 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">MP2 Energy</TD>
+						<TD VALIGN="TOP">-396.76652293641 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">ZPE</TD>
+						<TD VALIGN="TOP">0.013653 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Conditions</TD>
+						<TD VALIGN="TOP">298.150K, 1.00000 atm</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Internal Energy</TD>
+						<TD VALIGN="TOP">-396.766127 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Enthalpy</TD>
+						<TD VALIGN="TOP">-396.765183 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Free Energy</TD>
+						<TD VALIGN="TOP">-396.788607 Hartree</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">C<sub>v</sub></TD>
+						<TD VALIGN="TOP">6.170 cal/mol-K</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Entropy</TD>
+						<TD VALIGN="TOP">49.301 cal/mol-K</TD>
+					</TR>
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewDipoleMoment()
+			{
+				doViewDipoleMoment("0:0.0009:1.7068:1.7068 Debye");
+			}
+		</SCRIPT>
+		<TR CLASS="job_entry">
+			<TD VALIGN="TOP">Dipole Moment</TD>
+			<TD VALIGN="TOP">1.7068 Debye <A HREF="javascript:ViewDipoleMoment()"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+		</TR>
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewVibrationalMode1(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doViewVibrationalMode("1,0.00,0.00,0.03:2,0.00,-0.46,-0.53:3,0.00,0.46,-0.53", 1, freq, form.VibModeScaleFactor.value * 1.0);
+			}
+			function AnimateVibrationalMode1(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doAnimateVibrationalMode("1,0.00,0.00,0.03:2,0.00,-0.46,-0.53:3,0.00,0.46,-0.53", 1, freq, form.VibModeScaleFactor.value * 1.0, Math.round(form.VibModeAnimationSpeed.value));
+			}
+		</SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewVibrationalMode2(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doViewVibrationalMode("1,0.00,0.00,0.03:2,0.00,0.55,-0.45:3,0.00,-0.55,-0.45", 2, freq, form.VibModeScaleFactor.value * 1.0);
+			}
+			function AnimateVibrationalMode2(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doAnimateVibrationalMode("1,0.00,0.00,0.03:2,0.00,0.55,-0.45:3,0.00,-0.55,-0.45", 2, freq, form.VibModeScaleFactor.value * 1.0, Math.round(form.VibModeAnimationSpeed.value));
+			}
+		</SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewVibrationalMode3(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doViewVibrationalMode("1,0.00,0.03,0.00:2,0.00,-0.52,0.48:3,0.00,-0.52,-0.48", 3, freq, form.VibModeScaleFactor.value * 1.0);
+			}
+			function AnimateVibrationalMode3(form, freq)
+			{
+				if (verifyDouble(form.VibModeScaleFactor.value, 'Normal Mode Amplitude'))
+					doAnimateVibrationalMode("1,0.00,0.03,0.00:2,0.00,-0.52,0.48:3,0.00,-0.52,-0.48", 3, freq, form.VibModeScaleFactor.value * 1.0, Math.round(form.VibModeAnimationSpeed.value));
+			}
+		</SCRIPT>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">Server</TD>
+						<TD VALIGN="TOP">webmo.chem.umass.edu (26424)</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD VALIGN="TOP">CPU time</TD>
+						<TD VALIGN="TOP">17.3 sec</TD>
+					</TR>
+					
+				</TABLE>
+				
+				</DIV>
+
+	<H3>Geometry Sequence Energies</H3>
+	<DIV ID='geometry_sequence'>
+	
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewGeometrySequenceEnergies()
+			{
+				doViewGeometrySequenceEnergies("0,-396.703853856:1,-396.703887344:2,-396.703869832:3,-396.703869832:4,-396.703869832");
+			}
+			function DownloadGeometrySequenceEnergies()
+			{
+				document.form.operation.value = "DownloadGeometrySequenceEnergies";
+				document.form.target = "_self";
+				document.form.submit();
+			}
+			function AnimateGeometrySequence(form)
+			{
+				if (form.geometry_sequence.value == '')
+				{
+					alert('No geometry data to animate!');
+					return;
+				}				
+				doAnimateGeometrySequence(form.geometry_sequence.value, form.GeometryAnimationLoop.selectedIndex, Math.round(form.GeometryAnimationSpeed.value));
+			}
+		</SCRIPT>
+		<INPUT TYPE="hidden" NAME="geometry_sequence" VALUE="!Step: 0 (E=-396.703853856)
+16 0.000000 0.000000 0.106026
+1 0.000000 0.970523 -0.848212
+1 0.000000 -0.970523 -0.848212
+
+!Step: 1 (E=-396.703887344)
+16 0.000000 0.000000 0.103386
+1 0.000000 1.019834 -0.827085
+1 0.000000 -1.019834 -0.827085
+
+!Step: 2 (E=-396.703869832)
+16 0.000000 0.000000 0.104305
+1 0.000000 1.011725 -0.834437
+1 0.000000 -1.011725 -0.834437
+
+!Step: 3 (E=-396.703869832)
+16 0.000000 0.000000 0.104305
+1 0.000000 1.011725 -0.834437
+1 0.000000 -1.011725 -0.834437
+
+!Step: 4 (E=-396.703869832)
+16 0.000000 0.000000 0.104305
+1 0.000000 1.011725 -0.834437
+1 0.000000 -1.011725 -0.834437
+
+">
+		
+				<TABLE CLASS="calculated_quantity">
+					<TR CLASS="header">
+						<TD><B>Step</B></TD>
+						<TD><B>Energy</B></TD>
+						<TD><A HREF="javascript:ViewGeometrySequenceEnergies()"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A>&nbsp;
+						<A HREF="javascript:DownloadGeometrySequenceEnergies()"><SPAN CLASS="popup" TITLE="Download"><IMG SRC="./images/download.gif" BORDER=0></SPAN></A>
+						<A HREF="javascript:AnimateGeometrySequence(document.form)"><SPAN CLASS="popup" TITLE="Animate"><IMG SRC="./images/animate.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>0</TD>
+						<TD>-396.703853856</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>1</TD>
+						<TD>-396.703887344</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>2</TD>
+						<TD>-396.703869832</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>3</TD>
+						<TD>-396.703869832</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>4</TD>
+						<TD>-396.703869832</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>Animation speed</TD>
+						<TD><INPUT TYPE="input" NAME="GeometryAnimationSpeed" SIZE=3 VALUE="5"></TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>Loop</TD>
+						<TD>
+							<SELECT NAME="GeometryAnimationLoop">
+								<OPTION VALUE="0" SELECTED>None
+								<OPTION VALUE="1">Loop
+								<OPTION VALUE="2">Cycle
+							</SELECT>
+						</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+				</TABLE>
+			</DIV>
+	<H3>Rotational Constants</H3>
+	<DIV ID='rotational_constants'>
+	
+				<TABLE CLASS="calculated_quantity">
+					<TR CLASS="header">
+						<TD><B>Constant</B></TD>
+						<TD><B>Frequency (GHz)</B></TD>
+						<TD><B>Frequency (cm<sup>-1</sup>)</B></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>a</TD>
+						<TD>302.45527</TD>
+						<TD>10.08882184755</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>b</TD>
+						<TD>244.94999</TD>
+						<TD>8.17065217831</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>c</TD>
+						<TD>135.34107</TD>
+						<TD>4.51449215577</TD>
+					</TR>									
+				</TABLE>
+			</DIV>
+	<H3>Partial Charges</H3>
+	<DIV ID='partial_charges'>
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewPartialCharge_mulliken()
+			{
+				doViewPartialCharge("1,S,-0.158034:2,H,0.079057:3,H,0.078978");
+			}
+		</SCRIPT>
+				<TABLE CLASS="calculated_quantity">
+					<TR CLASS="header">
+						<TD><B>Atom</B></TD>
+						<TD><B>Symbol</B></TD>
+						<TD><B>Charge</B></TD>
+						<TD><A HREF="javascript:ViewPartialCharge_mulliken()"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>1</TD>
+						<TD>S</TD>
+						<TD>-0.158034</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>2</TD>
+						<TD>H</TD>
+						<TD>0.079057</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>3</TD>
+						<TD>H</TD>
+						<TD>0.078978</TD>
+						<TD>&nbsp;</TD>
+					</TR>
+				</TABLE>
+		</DIV>
+	<H3>Vibrational Modes</H3>
+	<DIV ID='vibrational_modes'>
+	
+		<SCRIPT LANGUAGE="JavaScript">
+			function ViewIRSpectrum(form)
+			{
+				if (verifyDouble(form.IRPeakWidth.value, 'Peak Width'))
+					doViewIRSpectrum(form.ir_spectrum_string.value, form.IRPeakWidth.value * 1.0);
+			}
+			function ViewRamanSpectrum(form)
+			{
+				if (verifyDouble(form.IRPeakWidth.value, 'Peak Width'))
+					doViewRamanSpectrum(form.raman_spectrum_string.value, form.IRPeakWidth.value * 1.0);
+			}
+		</SCRIPT>
+		<INPUT TYPE="hidden" NAME="ir_spectrum_string" VALUE="1,A1,1202.8759,12.6216:2,A1,2382.2555,28.4057:3,B2,2407.8796,30.5436">
+		<INPUT TYPE="hidden" NAME="raman_spectrum_string" VALUE="1,A1,1202.8759,:2,A1,2382.2555,:3,B2,2407.8796,">
+				<TABLE CLASS="calculated_quantity" >
+					<TR CLASS="header">
+						<TD><B>Mode</B></TD>
+						<TD><B>Symmetry</B></TD>
+						<TD><B>Frequency (cm<sup>-1</sup>)</B></TD>
+						<TD><B>IR (Raman) Intensity</B></TD>
+						<TD COLSPAN=2><B>Actions</B></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>1</TD>
+						<TD>A1</TD>
+						<TD>1202.8759</TD>
+						<TD>12.6216</TD>
+						<TD><A HREF="javascript:ViewVibrationalMode1(document.form,1202.88)"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+						<TD><A HREF="javascript:AnimateVibrationalMode1(document.form,1202.88)"><SPAN CLASS="popup" TITLE="Animate"><IMG SRC="./images/animate.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>2</TD>
+						<TD>A1</TD>
+						<TD>2382.2555</TD>
+						<TD>28.4057</TD>
+						<TD><A HREF="javascript:ViewVibrationalMode2(document.form,2382.26)"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+						<TD><A HREF="javascript:AnimateVibrationalMode2(document.form,2382.26)"><SPAN CLASS="popup" TITLE="Animate"><IMG SRC="./images/animate.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD>3</TD>
+						<TD>B2</TD>
+						<TD>2407.8796</TD>
+						<TD>30.5436</TD>
+						<TD><A HREF="javascript:ViewVibrationalMode3(document.form,2407.88)"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+						<TD><A HREF="javascript:AnimateVibrationalMode3(document.form,2407.88)"><SPAN CLASS="popup" TITLE="Animate"><IMG SRC="./images/animate.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD COLSPAN=4>Frequency Scale Factor</TD>
+						<TD COLSPAN=2><INPUT TYPE="text" NAME="VibFreqScaleFactor" SIZE=5 VALUE="1.0"><A HREF="javascript:RescaleFrequencies(document.form)"><SPAN CLASS="popup" TITLE="Rescale frequencies"><IMG SRC="./images/edit.gif" BORDER=0></SPAN></A></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD COLSPAN=4>Normal Mode Amplitude</TD>
+						<TD COLSPAN=2><INPUT TYPE="text" NAME="VibModeScaleFactor" SIZE=3 VALUE="1.0"></TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD COLSPAN=4>Animation Speed</TD>
+						<TD COLSPAN=2><INPUT TYPE="text" NAME="VibModeAnimationSpeed" SIZE=3 VALUE="50"></TD>
+					</TR>					
+					<TR CLASS="job_entry">
+						<TD COLSPAN=4>IR Spectrum</TD>
+						<TD><A HREF="javascript:ViewIRSpectrum(document.form)"><SPAN CLASS="popup" TITLE="View"><IMG SRC="./images/view.gif" BORDER=0></SPAN></A></TD>
+						<TD>&nbsp;</TD>
+					</TR>
+					<TR CLASS="job_entry">
+						<TD COLSPAN=3>Peak Width (cm<sup>-1</sup>)</TD>
+						<TD COLSPAN=3><INPUT TYPE="text" NAME="IRPeakWidth" SIZE=3 VALUE="40"></TD>
+					</TR>
+				</TABLE>
+			</DIV>
+	<H3>Quote</H3>
+	<DIV ID='quote'>
+	 THOSE WHO ASPIRE NOT TO GUESS AND DIVINE, BUT TO DISCOVER AND KNOW, WHO PROPOSE NOT TO DEVISE  MIMIC AND FABULOUS WORLDS OF THEIR OWN, BUT TO  EXAMINE AND DISSECT THE NATURE OF THIS VERY WORLD  ITSELF, MUST GO TO THE FACTS THEMSELVES FOR EVERYTHING.                               -- FRANCIS BACON, 1620
+	</DIV>
+				
+			</DIV>
+			</SPAN>
+
+
+			</FORM>
+				
+		<SCRIPT LANGUAGE="JavaScript">
+			CheckNotesArea();
+			
+			<!-- Overloaded Javascript functions -->
+			function DownloadCoordinateScan1D() {
+				window.open('./27898/scan27898.csv');
+			}
+			function DownloadCoordinateScan2D() {
+				window.open('./27898/scan27898.csv');
+			}
+			function DownloadGeometrySequenceEnergies() {
+				window.open('./27898/sequence_energies27898.csv');
+			}
+			function SaveMolecularOrbital(mo) {
+				window.open('./27898/job27898_mo1.mo');
+			}
+			function SaveSurface(type) {
+				window.open('./27898/job27898_mo1.mo');
+			}
+			function SaveNBO(mo_index,type) {
+				window.open('./27898/job27898_' + type + '1.mo');
+			}
+			function doViewMolecularOrbital(jobNumber, mo_index) {
+				document.getElementById("moledit-panel").setAttribute("orbitalSrc", "./27898/job27898_mo1.mo");
+				document.moledit.setWavefunction(jobNumber, "mo", mo_index);
+				DisplayApplet(0);
+			}
+			function doViewSurface(jobNumber, type) {
+				document.getElementById("moledit-panel").setAttribute("orbitalSrc", "./27898/job27898_mo1.mo");
+				document.moledit.setWavefunction(jobNumber, type, 0);
+				DisplayApplet(0);
+			}
+			function doViewNBO(jobNumber, type, mo_index) {
+				document.getElementById("moledit-panel").setAttribute("orbitalSrc", "./27898/job27898_" + type + "1.mo");
+				document.moledit.setWavefunction(jobNumber, type, mo_index);
+				DisplayApplet(0);
+			}
+		</SCRIPT>
+
+	</BODY>
+</HTML>
